@@ -9,66 +9,76 @@
 <style>
 :root{
   --paper:#F3F4EE; --ink:#1E2A26; --muted:#5D6B66; --rule:#D5DAD3; --card:#FFFFFF;
-  --accent:#1F6F8B; --reed:#B7893A;
-  --ok:#2E7D4F; --ok-bg:#E3F1E7; --no:#8E9993; --no-bg:#ECEEEA; --call:#B5741F; --call-bg:#F7EBD6;
+  --accent:#1F6F8B; --reed:#B7893A; --ok:#2E7D4F; --ok-bg:#E3F1E7; --no:#8E9993; --no-bg:#ECEEEA; --quote-bg:#F6F7F3;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --paper:#141A18; --ink:#E6EAE6; --muted:#A3ADA8; --rule:#2C3733; --card:#1C2421;
-    --accent:#6FB8D0; --reed:#D2A75A;
-    --ok:#7FCB9A; --ok-bg:#1E3427; --no:#7B8681; --no-bg:#232B28; --call:#E0A85A; --call-bg:#3A2D18;
+    --accent:#6FB8D0; --reed:#D2A75A; --ok:#7FCB9A; --ok-bg:#1E3427; --no:#7B8681; --no-bg:#232B28; --quote-bg:#182019;
   }
 }
 :root[data-theme="dark"]{
   --paper:#141A18; --ink:#E6EAE6; --muted:#A3ADA8; --rule:#2C3733; --card:#1C2421;
-  --accent:#6FB8D0; --reed:#D2A75A;
-  --ok:#7FCB9A; --ok-bg:#1E3427; --no:#7B8681; --no-bg:#232B28; --call:#E0A85A; --call-bg:#3A2D18;
+  --accent:#6FB8D0; --reed:#D2A75A; --ok:#7FCB9A; --ok-bg:#1E3427; --no:#7B8681; --no-bg:#232B28; --quote-bg:#182019;
 }
 *{box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;padding-inline:20px;padding-block:32px 72px}
-.wrap{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:40px}
+body{background:var(--paper);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5;padding-inline:20px;padding-block:32px 72px}
+.wrap{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:40px}
 h1,h2,h3{font-family:"Fraunces","Iowan Old Style",Georgia,serif;font-weight:600;line-height:1.15;text-wrap:balance;margin:0}
 h1{font-size:2.5rem;font-variation-settings:"opsz" 144}
-h2{font-size:1.5rem;margin-bottom:12px}
-h3{font-size:1.1rem}
+h2{font-size:1.4rem}
+h3{font-size:1.35rem}
 p{margin:0}
-.eyebrow{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
-header{display:flex;flex-direction:column;gap:12px}
-header .meta{color:var(--muted);font-size:.9rem;max-width:62ch}
-.answer{background:var(--card);border-left:4px solid var(--accent);padding:20px 22px;display:flex;flex-direction:column;gap:8px;font-size:1.05rem}
-.answer p{max-width:62ch}
-.answer strong{color:var(--accent)}
-.weekend{background:var(--card);border:1px solid var(--rule)}
-.weekend h3{padding:14px 20px 0;font-size:1.25rem}
-.weekend .sub{padding:2px 20px 12px;color:var(--muted);font-size:.9rem}
-.day{display:grid;grid-template-columns:64px 1fr;gap:0 16px;padding:14px 20px;border-top:1px solid var(--rule)}
-.day .d{font-weight:700;color:var(--reed);font-variant-numeric:tabular-nums;line-height:1.3}
-.day .d small{display:block;font-weight:400;color:var(--muted);font-size:.8rem}
-.day .pick{display:flex;flex-direction:column;gap:4px}
-.day .pick .what{font-weight:600}
-.day .pick .what .tag{display:inline-block;margin-left:6px;padding:2px 7px;border-radius:3px;font-size:.72rem;font-weight:600;vertical-align:middle;letter-spacing:.02em}
-.tag.boat{background:var(--ok-bg);color:var(--ok)}
-.tag.noboat{background:var(--no-bg);color:var(--no)}
-.tag.call{background:var(--call-bg);color:var(--call)}
-.day .pick .why{font-size:.95rem;max-width:66ch}
-.day .pick .how{font-size:.88rem;color:var(--muted);font-variant-numeric:tabular-nums}
-.stack{display:flex;flex-direction:column;gap:18px}
-.ref{border-top:1px solid var(--rule);padding-top:28px}
-.ref h2{font-size:1.25rem}
-.ref p,.ref li{font-size:.95rem}
-.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.box{background:var(--card);border:1px solid var(--rule);padding:16px 18px;display:flex;flex-direction:column;gap:8px}
-.box h3{font-size:1.05rem}
-.box .line{font-size:.9rem;color:var(--muted)}
-ul{margin:0;padding-left:1.15em;display:flex;flex-direction:column;gap:5px}
-ul li{max-width:68ch}
-.timeline{display:grid;grid-template-columns:56px 1fr;gap:6px 12px;font-size:.92rem}
-.timeline .t{font-weight:700;font-variant-numeric:tabular-nums;color:var(--accent)}
-.phone{font-weight:700;font-variant-numeric:tabular-nums}
-footer{color:var(--muted);font-size:.85rem;border-top:1px solid var(--rule);padding-top:16px;max-width:68ch}
 a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:2px}
 a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-@media (max-width:480px){h1{font-size:2rem}.day{grid-template-columns:56px 1fr}}
+.eyebrow{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+header{display:flex;flex-direction:column;gap:10px}
+header .meta{color:var(--muted);font-size:.95rem;max-width:60ch}
+
+/* day picker */
+.picker{background:var(--card);border:1px solid var(--rule)}
+.picker .wk{display:grid;grid-template-columns:150px 1fr;border-top:1px solid var(--rule)}
+.picker .wk:first-child{border-top:none}
+.picker .wk .lbl{padding:14px 16px;font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.05rem;line-height:1.25;border-right:1px solid var(--rule)}
+.picker .wk .lbl small{display:block;font-family:"Public Sans",sans-serif;font-weight:400;font-size:.8rem;color:var(--muted);margin-top:4px}
+.picker .days{display:flex;flex-direction:column}
+.picker .row{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:10px 16px;border-top:1px solid var(--rule)}
+.picker .row:first-child{border-top:none}
+.picker .row .d{font-weight:700;color:var(--reed);font-variant-numeric:tabular-nums}
+.picker .row .n{font-weight:600}
+.picker .row .n small{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
+.pill{display:inline-block;padding:3px 9px;border-radius:3px;font-size:.78rem;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pill.ok{background:var(--ok-bg);color:var(--ok)}
+.pill.no{background:var(--no-bg);color:var(--no)}
+.star{color:var(--reed)}
+
+/* option cards */
+.opts{display:flex;flex-direction:column;gap:28px}
+.opt{background:var(--card);border:1px solid var(--rule);scroll-margin-top:16px}
+.opt .photos{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--rule)}
+.opt .photos img{display:block;width:100%;height:100%;aspect-ratio:3/2;object-fit:cover;max-width:100%}
+.opt .body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:14px}
+.opt .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;align-items:baseline}
+.opt .top .rating{font-size:.9rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.opt .one{font-size:1.05rem;max-width:64ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--rule);border-radius:3px;padding:5px 10px;font-size:.85rem;font-variant-numeric:tabular-nums}
+.chip b{font-weight:700}
+.quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.q{background:var(--quote-bg);padding:12px 14px;font-size:.92rem;display:flex;flex-direction:column;gap:6px}
+.q p{font-style:italic}
+.q cite{font-style:normal;font-size:.8rem;color:var(--muted)}
+.opt .go{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:baseline;font-size:.95rem;border-top:1px solid var(--rule);padding-top:12px}
+.opt .go .tel{font-weight:700;font-variant-numeric:tabular-nums}
+.opt .go .warn{color:var(--muted);font-size:.88rem;flex-basis:100%}
+footer{color:var(--muted);font-size:.82rem;border-top:1px solid var(--rule);padding-top:16px;max-width:72ch}
+@media (max-width:640px){
+  h1{font-size:2rem}
+  .picker .wk{grid-template-columns:1fr}
+  .picker .wk .lbl{border-right:none;border-bottom:1px solid var(--rule);padding-bottom:10px}
+  .picker .row{grid-template-columns:56px 1fr;grid-template-rows:auto auto}
+  .picker .row .pill{grid-column:2}
+}
 </style>
 </head>
 <body>
@@ -78,148 +88,117 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 <header>
   <p class="eyebrow">Saturday 3 October 2026 · six of us and the dog</p>
   <h1>Luke's Birthday</h1>
-  <p class="meta">A family day out to mark it, on the birthday weekend or the one either side. Each day has one suggestion: a self-drive day boat where one was free, or the best day out without one. Checked on 13 September 2026 against the operators' live booking systems, so anything marked free was open that day, not held.</p>
+  <p class="meta">Pick a day, then look at the boat. Five places cover every weekend from 19 September to 11 October. All take six people and a dog and have a toilet on board. Prices and availability were read from the operators' booking systems on 13 September.</p>
 </header>
 
-<section class="answer">
-  <p class="eyebrow">In three lines</p>
-  <p><strong>On the birthday itself, Saturday 3 October:</strong> a boat at Lee Valley if the group will work locks, otherwise the Wyndham charter at Ferry Meadows.</p>
-  <p><strong>Birthday weekend, Sunday 4 October:</strong> Union Wharf at Market Harborough. The best October boat: no locks, heaters, dog welcome.</p>
-  <p><strong>Celebrate a week early, Saturday 26 September:</strong> Fox Narrowboats at March. The best boat of the lot, closest, no locks.</p>
-</section>
-
-<section class="stack">
-
-  <div class="weekend">
-    <h3>The birthday weekend, 3 and 4 October</h3>
-    <p class="sub">Saturday is the day itself. Fox has closed for the year by now, so the boats are an hour away.</p>
-    <div class="day"><div class="d">Sat 3<small>sunset 18.34</small></div><div class="pick">
-      <p class="what">Lee Valley Boat Centre, Broxbourne <span class="tag boat">Boat free · £300</span></p>
-      <p class="why">The only boat free on the birthday itself. Seats 12, toilet, dog free. The catch: there are no lock-keepers, so you work two or three locks each way, and the Lee is busier and more built-up than the Fens. If nobody fancies locks, do the Wyndham charter instead.</p>
-      <p class="how">58 min · 01992 462085 · £250 card deposit</p>
-    </div></div>
-    <div class="day"><div class="d">Sun 4<small>sunset 18.32</small></div><div class="pick">
-      <p class="what">Union Wharf, Market Harborough <span class="tag boat">Boat free · £230</span></p>
-      <p class="why">The best October day. Moorhen seats 12 with a heater and roll-down sides; Water Vole seats exactly six with radiators and a table for £200. Fixed lock-free route to Foxton and back, dog welcome, 4.9 stars from 287 reviews. Ask which boat boards more easily, one reviewer found the steps steep.</p>
-      <p class="how">64 min · 01858 432123 · book from the boat pages at <a href="https://www.unionwharfharborough.co.uk/day-boats/">unionwharfharborough.co.uk</a></p>
-    </div></div>
-  </div>
-
-  <div class="weekend">
-    <h3>The weekend before, 26 and 27 September</h3>
-    <p class="sub">Celebrate a week early and get the best boat. Fox is open both days.</p>
-    <div class="day"><div class="d">Sat 26<small>sunset 18.50</small></div><div class="pick">
-      <p class="what">Fox Narrowboats, March <span class="tag boat">Boat free · £260</span></p>
-      <p class="why">The pick of the whole list. Both boats were open: up to 10, flush toilet, covered front seating, dog £10. Cruise west to Benwick with no locks, pub or picnic, back by 4.30. Office open 9 to 4 for handover questions. Lee Valley at Broxbourne was also free this day at £300, but you work the locks yourselves.</p>
-      <p class="how">49 min · 01354 652770 · or book at <a href="https://www.foxboats.co.uk/booking/">foxboats.co.uk/booking</a></p>
-    </div></div>
-    <div class="day"><div class="d">Sun 27<small>sunset 18.48</small></div><div class="pick">
-      <p class="what">Fox Narrowboats, March <span class="tag boat">Boat free · £260</span></p>
-      <p class="why">Identical to Saturday. Take this if the 26th goes before you call.</p>
-      <p class="how">49 min · 01354 652770</p>
-    </div></div>
-  </div>
-
-  <div class="weekend">
-    <h3>The weekend after, 10 and 11 October</h3>
-    <p class="sub">Celebrate a week late. Getting thin: sunset before 6.20 and 13 to 14°C.</p>
-    <div class="day"><div class="d">Sat 10<small>sunset 18.18</small></div><div class="pick">
-      <p class="what">Rutland Belle, Rutland Water <span class="tag noboat">No boat free</span></p>
-      <p class="why">No self-drive boat within an hour. Someone else drives this one: a 45-minute cruise to Normanton Church with a bar aboard, lift for boarding, dog on a lead for £4 with limited places. £100 for six plus the dog. Lunch at the Finch's Arms in Hambleton, ring to confirm dogs.</p>
-      <p class="how">60 min · sailings at weekends through October · Finch's Arms 01572 756575</p>
-    </div></div>
-    <div class="day"><div class="d">Sun 11<small>sunset 18.16</small></div><div class="pick">
-      <p class="what">Union Wharf, Market Harborough <span class="tag boat">Boat free · £200</span></p>
-      <p class="why">Water Vole only: six seats exactly, radiators, table and chairs, lock-free to Foxton. ABC at Gayton also had a boat this day at £164, but it has no heating and is over 70 minutes away.</p>
-      <p class="how">64 min · 01858 432123</p>
-    </div></div>
-  </div>
-
-  <div class="weekend">
-    <h3>Two weeks early, 19 and 20 September</h3>
-    <p class="sub">The date first offered. Fine, but no better than the weekend after it.</p>
-    <div class="day"><div class="d">Sat 19<small>sunset 19.06</small></div><div class="pick">
-      <p class="what">The Wyndham at Ferry Meadows, Peterborough <span class="tag noboat">No boat free</span></p>
-      <p class="why">Fox was already taken on the 19th and no other boat within an hour was checked for that date. Take the whole Wyndham electric boat instead: ramp and lift for Nan, dog welcome aboard and in the cafe, £158 an hour for up to 12, then lunch in the park.</p>
-      <p class="how">49 min · 01733 234193 · public sailings £11 a head if you would rather not charter</p>
-    </div></div>
-    <div class="day"><div class="d">Sun 20<small>sunset 19.04</small></div><div class="pick">
-      <p class="what">Fox Narrowboats, March <span class="tag boat">Boat free · £260</span></p>
-      <p class="why">Both boats were open. Same boat, route and price as the 26th, two weeks earlier.</p>
-      <p class="how">49 min · 01354 652770 · Sunday office hours 9 to 3</p>
-    </div></div>
-  </div>
-
-</section>
-
-<section class="ref">
-  <h2>How to book, and what to ask</h2>
-  <div class="cols">
-    <div class="box">
-      <h3>Fox Narrowboats</h3>
-      <p class="line"><span class="phone">01354 652770</span> · 10 Marina Drive, March PE15 0AU</p>
-      <ul>
-        <li>Is the 26th or 27th still free on either boat, and can we hold it now?</li>
-        <li>Is there a heater? Your site lists hob, fridge and toilet but not heating.</li>
-        <li>How does an elderly passenger board? Steps, handrail, help?</li>
-        <li>Any weed or low-water warning on the Benwick route that week?</li>
-      </ul>
-      <p class="line">£100 deposit, £10 for the dog, two adults must sign, fuel and tuition included. Refund if cancelled 28 days ahead.</p>
+<section class="picker" aria-label="Pick a day">
+  <div class="wk">
+    <div class="lbl">The birthday weekend<small>3 and 4 October</small></div>
+    <div class="days">
+      <div class="row"><span class="d">Sat 3</span><span class="n"><a href="#leevalley">Lee Valley, Broxbourne</a><small>The only boat free on the day. You work the locks.</small></span><span class="pill ok">Boat free · £300</span></div>
+      <div class="row"><span class="d">Sun 4</span><span class="n"><a href="#unionwharf">Union Wharf, Market Harborough</a> <span class="star">★ best October day</span><small>No locks, heaters, 4.9 stars.</small></span><span class="pill ok">Boat free · £230</span></div>
     </div>
-    <div class="box">
-      <h3>Union Wharf</h3>
-      <p class="line"><span class="phone">01858 432123</span> · Market Harborough LE16 7UW</p>
-      <ul>
-        <li>Moorhen or Water Vole on Sunday 4 October: which boards more easily?</li>
-        <li>Is there a backrest at the tiller? One reviewer found none on Moorhen.</li>
-        <li>Which pub at the foot of Foxton takes dogs?</li>
-      </ul>
-      <p class="line">Return 4.30, or 4 in darker months. Prices only show once you pick a date in their booking widget.</p>
+  </div>
+  <div class="wk">
+    <div class="lbl">The weekend before<small>26 and 27 September</small></div>
+    <div class="days">
+      <div class="row"><span class="d">Sat 26</span><span class="n"><a href="#fox">Fox Narrowboats, March</a> <span class="star">★ best boat of all</span><small>Closest, no locks, 5.0 stars.</small></span><span class="pill ok">Boat free · £260</span></div>
+      <div class="row"><span class="d">Sun 27</span><span class="n"><a href="#fox">Fox Narrowboats, March</a><small>Same as Saturday.</small></span><span class="pill ok">Boat free · £260</span></div>
+    </div>
+  </div>
+  <div class="wk">
+    <div class="lbl">The weekend after<small>10 and 11 October</small></div>
+    <div class="days">
+      <div class="row"><span class="d">Sat 10</span><span class="n"><a href="#rutlandbelle">Rutland Belle, Rutland Water</a><small>No self-drive boat free. Someone else drives this one.</small></span><span class="pill no">Cruise · £100</span></div>
+      <div class="row"><span class="d">Sun 11</span><span class="n"><a href="#unionwharf">Union Wharf, Market Harborough</a><small>Water Vole only, seats exactly six.</small></span><span class="pill ok">Boat free · £200</span></div>
+    </div>
+  </div>
+  <div class="wk">
+    <div class="lbl">Two weeks early<small>19 and 20 September</small></div>
+    <div class="days">
+      <div class="row"><span class="d">Sat 19</span><span class="n"><a href="#wyndham">The Wyndham, Ferry Meadows</a><small>Fox was taken. Charter the whole electric boat instead.</small></span><span class="pill no">Charter · £158/hr</span></div>
+      <div class="row"><span class="d">Sun 20</span><span class="n"><a href="#fox">Fox Narrowboats, March</a><small>The date first offered.</small></span><span class="pill ok">Boat free · £260</span></div>
     </div>
   </div>
 </section>
 
-<section class="ref">
-  <h2>The day at Fox, if it is the 26th</h2>
-  <div class="cols">
-    <div class="box">
-      <div class="timeline">
-        <span class="t">08.30</span><span>Leave Coton. Free parking at the yard.</span>
-        <span class="t">09.30</span><span>Handover and tuition. Arrive before 10.</span>
-        <span class="t">10.15</span><span>West along the Old River Nene toward Benwick. No locks.</span>
-        <span class="t">12.15</span><span>Moor at Benwick. Five Alls pub at weekends, or the cafe in the Spar, or a picnic.</span>
-        <span class="t">14.00</span><span>Turn and amble back. Kettle on board.</span>
-        <span class="t">16.30</span><span>Back at the yard, well inside the 6pm return.</span>
+<section class="opts">
+  <h2>The five places</h2>
+
+  <article class="opt" id="fox">
+    <div class="photos"><img src="img/fox-1.jpg" alt="A Fox Narrowboats day boat at March"><img src="img/fox-2.jpg" alt="The Old River Nene near March"></div>
+    <div class="body">
+      <div class="top"><h3>Fox Narrowboats, March</h3><span class="rating">TripAdvisor 5.0 from 40 reviews</span></div>
+      <p class="one">Your own narrowboat for the day on the quiet Fenland rivers west of March. No locks toward Benwick, a pub at the turn, back by 4.30.</p>
+      <div class="chips"><span class="chip"><b>49 min</b> drive</span><span class="chip"><b>£260</b> Sat or Sun</span><span class="chip"><b>10</b> seats</span><span class="chip">Dog <b>£10</b></span><span class="chip">Flush toilet</span><span class="chip">Covered seating</span><span class="chip"><b>No locks</b></span><span class="chip">9.30 to 6</span></div>
+      <div class="quotes">
+        <div class="q"><p>"Eight of us, all over 70, hired the day boat Adventurer last week. The boat was very well equipped for a day on the river and was easy to handle."</p><cite>Jennifer · TripAdvisor · June 2023 · 5 stars</cite></div>
+        <div class="q"><p>"The boat was excellent with lots of room, two burner hob to make hot drinks etc. A fridge, toilet and heater... The staff were really helpful and friendly."</p><cite>phil s · TripAdvisor · September 2024 · 5 stars</cite></div>
       </div>
+      <div class="go"><a href="https://www.foxboats.co.uk/day-boat-hire/">More at foxboats.co.uk</a><a href="https://www.tripadvisor.co.uk/Attraction_Review-g1022656-d7092549-Reviews-Fox_Narrowboats-March_Cambridgeshire_England.html">All reviews</a><span class="tel">01354 652770</span><span class="warn">Open 20, 26 and 27 September. Closed for the year from 3 October. Ask about heating and how Nan boards.</span></div>
     </div>
-    <div class="box">
-      <h3>Nan and the dog</h3>
-      <ul>
-        <li>Covered front seating and a dinette, so Nan sits in the warm all day. Bring cushions and a blanket; nobody has confirmed a heater.</li>
-        <li>Flush toilet on board.</li>
-        <li>Dog on a lead on board and at the pub.</li>
-        <li>Bring photo ID, layers, a backup picnic, binoculars.</li>
-      </ul>
-    </div>
-  </div>
-</section>
+  </article>
 
-<section class="ref">
-  <h2>Everything else, in one line each</h2>
-  <ul>
-    <li><b>Purvis Marine, Huntingdon</b> (01480 453628), 21 minutes. Closes end of September and publishes nothing about boat size, dogs or price. Ring if you want a boat close to home on the 26th or 27th.</li>
-    <li><b>Fish and Duck, near Ely</b> and <b>Brandon Creek, Littleport</b>: no dogs allowed. Out.</li>
-    <li><b>Cosgrove Narrowboats</b>: open every date at £210, lock-free, but 79 minutes each way and no dog policy published.</li>
-    <li><b>MK Afloat, Milton Keynes</b>: struck on safety reviews. <b>Ouse Boats, Bedford</b> and <b>Peterborough Boat Hire</b>: websites dead.</li>
-    <li><b>Nene Valley Railway</b> (45 min): steam with an accessible coach, dog £2, £122 for six on a standard day. A sound third non-boat option for any weekend.</li>
-    <li><b>Shuttleworth Race Day Air Show</b>, Sunday 4 October, from £35 a head: a real occasion, but dogs on air-show days unconfirmed, 01767 627927.</li>
-    <li><b>Rejected non-boat ideas</b>: Burghley, Anglesey Abbey, Welney, Bressingham, Stotfold Mill and both vineyards ban or exclude the dog; Wicken Fen, Wimpole and anything in Cambridge or Ely are too familiar.</li>
-    <li><b>Rivers this autumn</b>: East Anglia is in drought, so expect low water and weed rather than fast currents. No lock closures on any date above. Check 0345 988 1188 the week before.</li>
-  </ul>
+  <article class="opt" id="unionwharf">
+    <div class="photos"><img src="img/unionwharf-1.jpg" alt="A Union Wharf day boat at Market Harborough"><img src="img/unionwharf-2.jpg" alt="Foxton Locks on the Grand Union Canal"></div>
+    <div class="body">
+      <div class="top"><h3>Union Wharf, Market Harborough</h3><span class="rating">TripAdvisor 4.9 from 287 reviews</span></div>
+      <p class="one">A fixed, lock-free canal route from Market Harborough to Foxton and back, with a heater on every boat. The best-reviewed yard on this page.</p>
+      <div class="chips"><span class="chip"><b>64 min</b> drive</span><span class="chip"><b>£230</b> Moorhen, <b>£200</b> Water Vole</span><span class="chip"><b>12</b> or <b>6</b> seats</span><span class="chip">Dog <b>free</b></span><span class="chip">Toilet</span><span class="chip"><b>Heater</b></span><span class="chip"><b>No locks</b></span><span class="chip">9 to 4.30</span></div>
+      <div class="quotes">
+        <div class="q"><p>"We were a family group aged from 8 to 75 and we all had an amazing time!!!"</p><cite>TravelAlly71 · TripAdvisor · September 2025 · 5 stars · Moorhen</cite></div>
+        <div class="q"><p>"Kingfisher was well equiped &amp; had plenty of room for 6 adults &amp; 6 children. Onboard fridge was welcome as it was a lovely warm day."</p><cite>David M · TripAdvisor · July 2026 · 5 stars</cite></div>
+      </div>
+      <div class="go"><a href="https://www.unionwharfharborough.co.uk/day-boats/">More at unionwharfharborough.co.uk</a><a href="https://www.tripadvisor.co.uk/Attraction_Review-g315977-d8091907-Reviews-Union_Wharf_Narrowboats-Market_Harborough_Leicestershire_England.html">All reviews</a><span class="tel">01858 432123</span><span class="warn">Open Sun 4 Oct (Moorhen or Water Vole) and Sun 11 Oct (Water Vole). One reviewer taking his 90-year-old mother found the boarding stairs steep, so ask which boat is easier.</span></div>
+    </div>
+  </article>
+
+  <article class="opt" id="leevalley">
+    <div class="photos"><img src="img/leevalley-1.jpg" alt="A Lee Valley Boat Centre day boat"><img src="img/leevalley-2.jpg" alt="The River Lee near Broxbourne"></div>
+    <div class="body">
+      <div class="top"><h3>Lee Valley Boat Centre, Broxbourne</h3><span class="rating">TripAdvisor 4.5 from 220 reviews</span></div>
+      <p class="one">The only boat free on the birthday itself. A wide 12-seater on the River Lee, where you work two or three locks each way yourselves.</p>
+      <div class="chips"><span class="chip"><b>58 min</b> drive</span><span class="chip"><b>£300</b></span><span class="chip"><b>12</b> seats</span><span class="chip">Dog <b>free</b></span><span class="chip">Toilet</span><span class="chip">No heater listed</span><span class="chip"><b>Locks, self-worked</b></span><span class="chip">9.15 to 5.30</span></div>
+      <div class="quotes">
+        <div class="q"><p>"You don't need to have done this before, they are easy to operate boats and you get full instruction."</p><cite>wenmon17 · TripAdvisor · August 2021 · 5 stars · Mr Badger</cite></div>
+        <div class="q"><p>"A fabulous day out with the family on 'Mr Badger'... negotiating the Locks down to Waltham Abbey. Boat well equipped and staff friendly - cannot fault!"</p><cite>BurdenClan · TripAdvisor · September 2020 · 5 stars</cite></div>
+      </div>
+      <div class="go"><a href="https://leevalleyboats.co.uk/dayboat/">More at leevalleyboats.co.uk</a><a href="https://www.tripadvisor.co.uk/Attraction_Review-g227062-d6664413-Reviews-Lee_Valley_Boat_Centre-Broxbourne_Hertfordshire_England.html">All reviews</a><span class="tel">01992 462085</span><span class="warn">Open Sat 26 Sept, Sat 3 and Sun 4 Oct. Season ends 11 October. Reviewers enjoy the locks; the yard's manual says there are no lock-keepers, so it is your job.</span></div>
+    </div>
+  </article>
+
+  <article class="opt" id="wyndham">
+    <div class="photos"><img src="img/wyndham-1.jpg" alt="The Wyndham electric boat at Ferry Meadows"><img src="img/wyndham-2.jpg" alt="Gunwade Lake at Ferry Meadows, Peterborough"></div>
+    <div class="body">
+      <div class="top"><h3>The Wyndham, Ferry Meadows, Peterborough</h3><span class="rating">No reviews of the boat yet · the park scores 4.4 from 1,648</span></div>
+      <p class="one">Someone else drives. A silent electric boat round Overton Lake and onto the Nene, boarded by a ramp and a lift, with the dog welcome aboard and in the cafe. Take the whole boat for an hour or two.</p>
+      <div class="chips"><span class="chip"><b>49 min</b> drive</span><span class="chip"><b>£158</b> per hour, whole boat</span><span class="chip">or <b>£11</b> a head</span><span class="chip"><b>12</b> seats</span><span class="chip">Dog <b>welcome</b></span><span class="chip"><b>Ramp and lift</b></span><span class="chip">Cafe on site</span></div>
+      <div class="quotes">
+        <div class="q"><p>"A superb ride which was so smooth it felt like you were gliding."</p><cite>Press preview, We Love Peterborough · October 2020 · not a customer review</cite></div>
+        <div class="q"><p>"Totally serene and the boat was so quiet you didn't disturb the wildlife."</p><cite>Press preview, We Love Peterborough · October 2020 · not a customer review</cite></div>
+      </div>
+      <div class="go"><a href="https://www.nenepark.org.uk/things-to-do/take-a-boat-trip/">More at nenepark.org.uk</a><span class="tel">01733 234193</span><span class="warn">Runs weekends through October. Book by phone to fix a time. The lift takes two manual wheelchairs per sailing.</span></div>
+    </div>
+  </article>
+
+  <article class="opt" id="rutlandbelle">
+    <div class="photos"><img src="img/rutlandbelle-1.jpg" alt="The Rutland Belle on Rutland Water"><img src="img/rutlandbelle-2.jpg" alt="Normanton Church on Rutland Water"></div>
+    <div class="body">
+      <div class="top"><h3>Rutland Belle, Rutland Water</h3><span class="rating">TripAdvisor 4.8 from 113 reviews</span></div>
+      <p class="one">Someone else drives. A 45-minute cruise across the reservoir to Normanton Church with a bar on board, a lift for boarding, and dogs on a lead. Lunch at a pub by the water afterwards.</p>
+      <div class="chips"><span class="chip"><b>60 min</b> drive</span><span class="chip"><b>£16</b> a head, dog <b>£4</b></span><span class="chip">Shared boat, up to 110</span><span class="chip">Dog <b>on a lead</b></span><span class="chip">Toilet</span><span class="chip"><b>Lift</b> at Whitwell</span><span class="chip">Bar on board</span></div>
+      <div class="quotes">
+        <div class="q"><p>"My husband is a wheelchair user &amp; accessibility was absolutely first rate with an easy to navigate jetty, an electric lift on &amp; off the boat."</p><cite>Kirsty T · TripAdvisor · July 2025 · 5 stars</cite></div>
+        <div class="q"><p>"Not just accessible - actively welcoming to our party of 4 adults (one in a wheelchair) and 2 dogs. Easy boarding (assisted by the crew)."</p><cite>NickyB008 · TripAdvisor · April 2025 · 5 stars</cite></div>
+      </div>
+      <div class="go"><a href="https://www.rutlandwatercruises.com/">More at rutlandwatercruises.com</a><a href="https://www.tripadvisor.co.uk/Attraction_Review-g190770-d12064499-Reviews-Rutland_Water_Cruises-Oakham_Rutland_England.html">All reviews</a><span class="tel">01572 787630</span><span class="warn">Weekend sailings 3 to 31 October, daily before that. Dog places are limited, so book the dog too. Finch's Arms at Hambleton for lunch, ring to confirm dogs: 01572 756575.</span></div>
+    </div>
+  </article>
+
 </section>
 
 <footer>
-  <p>Read on 13 September 2026 from operators' own sites and booking systems, TripAdvisor, and Environment Agency and Middle Level pages. Drive times are routed from Coton in free-flowing traffic. Availability moves daily: the phone call is the truth.</p>
+  <p>Checked 13 September 2026 from the operators' own sites and booking systems and TripAdvisor. Drive times routed from Coton in free-flowing traffic. Availability moves daily: the phone call is the truth. Boat photos are the operators' own. Landscape photos from Geograph via Wikimedia Commons, CC BY-SA 2.0: Richard Humphrey (Old Nene, Gunwade Lake), Mat Fascione (Foxton, Normanton), Christine Matthews (Dobbs Weir); Mr Badger photo by Northmetpit, public domain.</p>
 </footer>
 
 </div>
